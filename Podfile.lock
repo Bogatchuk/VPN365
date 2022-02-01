@@ -1,0 +1,24 @@
+PODS:
+  - CoreVPN (1.0.6):
+    - PlainPing
+  - PlainPing (0.5.2)
+  - WKCookieWebView (2.0.3)
+
+DEPENDENCIES:
+  - CoreVPN
+  - WKCookieWebView (~> 2.0)
+
+SPEC REPOS:
+  trunk:
+    - CoreVPN
+    - PlainPing
+    - WKCookieWebView
+
+SPEC CHECKSUMS:
+  CoreVPN: 28afc0636f257524299d5fb1da791dc6d5507ad8
+  PlainPing: 41fb93099deb2f5ddbc534a934eb3bf07522d437
+  WKCookieWebView: 528260c9cf7d89d312d61639cfca75c5618326a2
+
+PODFILE CHECKSUM: 4e7d128e6116785963cddb0927213d4124f50e1d
+
+COCOAPODS: 1.11.2

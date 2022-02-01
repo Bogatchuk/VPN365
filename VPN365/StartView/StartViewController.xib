@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StartViewController" customModule="SafariView_vpn" customModuleProvider="target">
+            <connections>
+                <outlet property="cancelImputButton" destination="yRI-CL-Usi" id="H2F-G8-HsX"/>
+                <outlet property="redoItem" destination="pzI-LG-Fga" id="p37-Bx-w3Y"/>
+                <outlet property="searchTextField" destination="bab-DA-y8e" id="lvl-rM-INX"/>
+                <outlet property="undoItem" destination="8TL-qr-U8w" id="vOz-kI-Ks1"/>
+                <outlet property="view" destination="u1M-Cu-PsP" id="ZVJ-OV-hpv"/>
+                <outlet property="viewWithTabs" destination="Ha7-ZQ-BmI" id="thr-X0-V21"/>
+                <outlet property="webView" destination="IWD-3r-YaT" id="Zdf-fH-0Jc"/>
+                <outletCollection property="tabButtons" destination="ZAB-SE-JIS" collectionClass="NSMutableArray" id="M0c-jh-Mep"/>
+                <outletCollection property="tabButtons" destination="30I-M7-f15" collectionClass="NSMutableArray" id="WK0-ed-HN8"/>
+                <outletCollection property="tabButtons" destination="wyA-Vy-kbV" collectionClass="NSMutableArray" id="Yg3-Md-JFR"/>
+                <outletCollection property="tabButtons" destination="i6R-bz-b9O" collectionClass="NSMutableArray" id="PVv-ah-pUY"/>
+                <outletCollection property="tabButtons" destination="XpD-Cg-UKs" collectionClass="NSMutableArray" id="aUZ-OZ-wF1"/>
+                <outletCollection property="tabButtons" destination="JtD-e6-zvl" collectionClass="NSMutableArray" id="Swk-mj-ov5"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="u1M-Cu-PsP">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wPD-Mf-d4z">
+                    <rect key="frame" x="0.0" y="11" width="414" height="44"/>
+                    <color key="barTintColor" systemColor="opaqueSeparatorColor"/>
+                    <items>
+                        <navigationItem id="zzG-1U-YLf"/>
+                    </items>
+                </navigationBar>
+                <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="UgN-sJ-yJM">
+                    <rect key="frame" x="6" y="16" width="402" height="34"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="🔍" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bab-DA-y8e">
+                            <rect key="frame" x="0.0" y="0.0" width="340" height="34"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" returnKeyType="go"/>
+                        </textField>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yRI-CL-Usi">
+                            <rect key="frame" x="346" y="0.0" width="56" height="34"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="Отмена"/>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="yRI-CL-Usi" firstAttribute="height" secondItem="bab-DA-y8e" secondAttribute="height" id="yeq-ks-pPb"/>
+                    </constraints>
+                </stackView>
+                <toolbar clearsContextBeforeDrawing="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PxK-o9-wD1">
+                    <rect key="frame" x="0.0" y="666" width="414" height="70"/>
+                    <color key="backgroundColor" red="0.75665730239999995" green="0.75674396749999995" blue="0.76418179269999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="70" id="oct-51-zt4"/>
+                    </constraints>
+                    <items>
+                        <barButtonItem title="Undo" image="Undo" style="plain" id="8TL-qr-U8w">
+                            <inset key="imageInsets" minX="0.0" minY="-10" maxX="0.0" maxY="0.0"/>
+                            <connections>
+                                <action selector="navigateToolBarButtonAction:" destination="-1" id="Vr1-dT-bIz"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="bMl-Xl-KHt">
+                            <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="20"/>
+                        </barButtonItem>
+                        <barButtonItem tag="1" title="Red" image="Redo" id="pzI-LG-Fga">
+                            <inset key="imageInsets" minX="0.0" minY="-10" maxX="0.0" maxY="0.0"/>
+                            <connections>
+                                <action selector="navigateToolBarButtonAction:" destination="-1" id="Rg6-RE-AMk"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="Uuq-hk-3Ij"/>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="Q8X-zs-RAl">
+                            <inset key="largeContentSizeImageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="19"/>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="TNM-31-5Az"/>
+                        <barButtonItem title="Refresh" image="Refresh" id="0O3-e6-IWe">
+                            <inset key="imageInsets" minX="0.0" minY="-10" maxX="0.0" maxY="0.0"/>
+                            <connections>
+                                <action selector="refreshButtonAction:" destination="-1" id="akz-Eo-gv8"/>
+                            </connections>
+                        </barButtonItem>
+                    </items>
+                    <color key="barTintColor" red="0.75665730239999995" green="0.75674396749999995" blue="0.76418179269999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </toolbar>
+                <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IWD-3r-YaT">
+                    <rect key="frame" x="0.0" y="55" width="414" height="611"/>
+                    <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <wkWebViewConfiguration key="configuration">
+                        <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                        <wkPreferences key="preferences"/>
+                    </wkWebViewConfiguration>
+                </wkWebView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ha7-ZQ-BmI">
+                    <rect key="frame" x="0.0" y="55" width="414" height="611"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="bsP-Cd-o8e">
+                            <rect key="frame" x="20" y="29.999999999999986" width="374" height="202.66666666666663"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="or0-Vz-xch">
+                                    <rect key="frame" x="0.0" y="0.0" width="374" height="91.333333333333329"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZAB-SE-JIS">
+                                            <rect key="frame" x="0.0" y="0.0" width="91.333333333333329" height="91.333333333333329"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="ZAB-SE-JIS" secondAttribute="height" multiplier="1:1" id="bXZ-sV-9ey"/>
+                                            </constraints>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                            <state key="normal" image="Apple"/>
+                                            <connections>
+                                                <action selector="tabButtonClicked:" destination="-1" eventType="touchUpInside" id="2GD-MX-a9O"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="30I-M7-f15">
+                                            <rect key="frame" x="141.33333333333334" y="0.0" width="91.333333333333343" height="91.333333333333329"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="30I-M7-f15" secondAttribute="height" multiplier="1:1" id="Hpm-6b-X3O"/>
+                                            </constraints>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                            <state key="normal" image="Bing"/>
+                                            <connections>
+                                                <action selector="tabButtonClicked:" destination="-1" eventType="touchUpInside" id="OP4-sx-sDj"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wyA-Vy-kbV">
+                                            <rect key="frame" x="282.66666666666669" y="0.0" width="91.333333333333314" height="91.333333333333329"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="wyA-Vy-kbV" secondAttribute="height" multiplier="1:1" id="dz6-IR-RYo"/>
+                                            </constraints>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                            <state key="normal" title="Button" image="Yandex"/>
+                                            <connections>
+                                                <action selector="tabButtonClicked:" destination="-1" eventType="touchUpInside" id="YYz-Jj-hn0"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="30I-M7-f15" firstAttribute="width" secondItem="30I-M7-f15" secondAttribute="height" multiplier="1:1" id="QmD-Ke-G3l"/>
+                                        <constraint firstItem="wyA-Vy-kbV" firstAttribute="width" secondItem="wyA-Vy-kbV" secondAttribute="height" multiplier="1:1" id="ocT-jq-aZp"/>
+                                    </constraints>
+                                    <variation key="heightClass=regular-widthClass=regular" spacing="100"/>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="xdO-np-azz">
+                                    <rect key="frame" x="0.0" y="111.33333333333334" width="374" height="91.333333333333343"/>
+                                    <subviews>
+                                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i6R-bz-b9O">
+                                            <rect key="frame" x="0.0" y="0.0" width="91.333333333333329" height="91.333333333333329"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="i6R-bz-b9O" secondAttribute="height" multiplier="1:1" id="sA2-Lq-J7q"/>
+                                            </constraints>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                            <state key="normal" title="Button" image="Gmail"/>
+                                            <connections>
+                                                <action selector="tabButtonClicked:" destination="-1" eventType="touchUpInside" id="65P-gp-yrs"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XpD-Cg-UKs">
+                                            <rect key="frame" x="141.33333333333334" y="0.0" width="91.333333333333343" height="91.333333333333329"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="XpD-Cg-UKs" secondAttribute="height" multiplier="1:1" id="DTo-8G-d2S"/>
+                                            </constraints>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                            <state key="normal" title="Button" image="Google"/>
+                                            <connections>
+                                                <action selector="tabButtonClicked:" destination="-1" eventType="touchUpInside" id="rnj-pf-6Tu"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JtD-e6-zvl">
+                                            <rect key="frame" x="282.66666666666669" y="0.0" width="91.333333333333314" height="91.333333333333329"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="JtD-e6-zvl" secondAttribute="height" multiplier="1:1" id="s98-zw-6wh"/>
+                                            </constraints>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                            <state key="normal" title="Button" image="YouTube"/>
+                                            <connections>
+                                                <action selector="tabButtonClicked:" destination="-1" eventType="touchUpInside" id="OLr-Jo-Eij"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="XpD-Cg-UKs" firstAttribute="width" secondItem="XpD-Cg-UKs" secondAttribute="height" multiplier="1:1" id="16D-H7-yri"/>
+                                        <constraint firstItem="JtD-e6-zvl" firstAttribute="width" secondItem="JtD-e6-zvl" secondAttribute="height" multiplier="1:1" id="dCq-Dc-BNO"/>
+                                    </constraints>
+                                    <variation key="heightClass=regular-widthClass=regular" spacing="100"/>
+                                </stackView>
+                            </subviews>
+                        </stackView>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="bG6-MU-BWp">
+                            <rect key="frame" x="0.0" y="262.66666666666669" width="414" height="239"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="bG6-MU-BWp" secondAttribute="height" multiplier="414:239" id="zUc-hX-A5L"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="bG6-MU-BWp" firstAttribute="leading" secondItem="Ha7-ZQ-BmI" secondAttribute="leading" id="25m-qY-xM6"/>
+                        <constraint firstAttribute="trailing" secondItem="bsP-Cd-o8e" secondAttribute="trailing" constant="20" id="5qe-JC-42E"/>
+                        <constraint firstItem="bsP-Cd-o8e" firstAttribute="leading" secondItem="Ha7-ZQ-BmI" secondAttribute="leading" constant="20" id="Hos-FV-GsA"/>
+                        <constraint firstItem="bG6-MU-BWp" firstAttribute="top" secondItem="bsP-Cd-o8e" secondAttribute="bottom" constant="30" id="Jqr-bV-lsf"/>
+                        <constraint firstAttribute="trailing" secondItem="bG6-MU-BWp" secondAttribute="trailing" id="XdC-wO-qnI"/>
+                        <constraint firstItem="bsP-Cd-o8e" firstAttribute="top" secondItem="Ha7-ZQ-BmI" secondAttribute="top" constant="30" id="kz1-Re-DKG"/>
+                    </constraints>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="MGH-gC-wp9">
+                    <rect key="frame" x="0.0" y="99" width="414" height="693"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="9R3-Mp-kDE"/>
+            <color key="backgroundColor" red="0.75665730239999995" green="0.75674396749999995" blue="0.76418179269999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="wPD-Mf-d4z" firstAttribute="trailing" secondItem="9R3-Mp-kDE" secondAttribute="trailing" id="0bf-4A-DnS"/>
+                <constraint firstItem="PxK-o9-wD1" firstAttribute="leading" secondItem="u1M-Cu-PsP" secondAttribute="leading" id="3K0-iM-fqZ"/>
+                <constraint firstItem="UgN-sJ-yJM" firstAttribute="leading" secondItem="9R3-Mp-kDE" secondAttribute="leading" constant="6" id="59X-sa-xKg"/>
+                <constraint firstItem="9R3-Mp-kDE" firstAttribute="trailing" secondItem="Ha7-ZQ-BmI" secondAttribute="trailing" id="6Dc-Xl-2me"/>
+                <constraint firstItem="IWD-3r-YaT" firstAttribute="leading" secondItem="9R3-Mp-kDE" secondAttribute="leading" id="AhS-ZZ-xDb"/>
+                <constraint firstItem="Ha7-ZQ-BmI" firstAttribute="leading" secondItem="9R3-Mp-kDE" secondAttribute="leading" id="CRX-JF-QXa"/>
+                <constraint firstItem="wPD-Mf-d4z" firstAttribute="leading" secondItem="9R3-Mp-kDE" secondAttribute="leading" id="H7d-ZP-8iZ"/>
+                <constraint firstItem="Ha7-ZQ-BmI" firstAttribute="top" secondItem="wPD-Mf-d4z" secondAttribute="bottom" id="NCd-I6-GTB"/>
+                <constraint firstItem="9R3-Mp-kDE" firstAttribute="bottom" secondItem="PxK-o9-wD1" secondAttribute="bottom" id="NKb-8Q-OdM"/>
+                <constraint firstItem="IWD-3r-YaT" firstAttribute="top" secondItem="wPD-Mf-d4z" secondAttribute="bottom" id="Oxu-Ks-TDd"/>
+                <constraint firstItem="PxK-o9-wD1" firstAttribute="top" secondItem="IWD-3r-YaT" secondAttribute="bottom" id="VGo-49-JPC"/>
+                <constraint firstItem="wPD-Mf-d4z" firstAttribute="centerY" secondItem="UgN-sJ-yJM" secondAttribute="centerY" id="biQ-Df-L8k"/>
+                <constraint firstItem="PxK-o9-wD1" firstAttribute="top" secondItem="MGH-gC-wp9" secondAttribute="bottom" id="cLU-4M-2Fm"/>
+                <constraint firstItem="IWD-3r-YaT" firstAttribute="trailing" secondItem="9R3-Mp-kDE" secondAttribute="trailing" id="cwR-yr-Ll7"/>
+                <constraint firstItem="9R3-Mp-kDE" firstAttribute="trailing" secondItem="MGH-gC-wp9" secondAttribute="trailing" id="hvO-8q-JR3"/>
+                <constraint firstItem="MGH-gC-wp9" firstAttribute="top" secondItem="wPD-Mf-d4z" secondAttribute="bottom" id="js8-aa-HYY"/>
+                <constraint firstItem="9R3-Mp-kDE" firstAttribute="trailing" secondItem="UgN-sJ-yJM" secondAttribute="trailing" constant="6" id="o1m-ej-uXj"/>
+                <constraint firstItem="UgN-sJ-yJM" firstAttribute="top" secondItem="9R3-Mp-kDE" secondAttribute="top" constant="16" id="r7R-hn-HKF"/>
+                <constraint firstItem="MGH-gC-wp9" firstAttribute="leading" secondItem="9R3-Mp-kDE" secondAttribute="leading" id="vqu-in-PIZ"/>
+                <constraint firstItem="9R3-Mp-kDE" firstAttribute="trailing" secondItem="PxK-o9-wD1" secondAttribute="trailing" id="xIg-xD-CAL"/>
+                <constraint firstItem="PxK-o9-wD1" firstAttribute="top" secondItem="Ha7-ZQ-BmI" secondAttribute="bottom" id="xSX-wy-1KT"/>
+            </constraints>
+            <variation key="default">
+                <mask key="subviews">
+                    <exclude reference="MGH-gC-wp9"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="45" y="761"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Apple" width="1200" height="1425"/>
+        <image name="Bing" width="1200" height="900"/>
+        <image name="Gmail" width="512" height="512"/>
+        <image name="Google" width="512" height="512"/>
+        <image name="Redo" width="29" height="29"/>
+        <image name="Refresh" width="29" height="29"/>
+        <image name="Undo" width="29" height="29"/>
+        <image name="Yandex" width="300" height="300"/>
+        <image name="YouTube" width="512" height="512"/>
+        <image name="logo" width="243" height="200"/>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

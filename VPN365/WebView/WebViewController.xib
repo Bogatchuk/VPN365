@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WebViewController" customModule="VPN_365" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="webView" destination="5y3-sG-VOe" id="LuH-Ly-sKb"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5y3-sG-VOe">
+                    <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                    <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <wkWebViewConfiguration key="configuration">
+                        <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                        <wkPreferences key="preferences"/>
+                    </wkWebViewConfiguration>
+                </wkWebView>
+                <view contentMode="scaleToFill" id="agf-96-IGT">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="OA6-yh-8sF">
+                            <rect key="frame" x="188.5" y="434.5" width="37" height="37"/>
+                            <color key="color" systemColor="systemBackgroundColor"/>
+                        </activityIndicatorView>
+                    </subviews>
+                    <viewLayoutGuide key="safeArea" id="am8-J9-Co8"/>
+                    <color key="backgroundColor" red="0.069831354293551404" green="0.42374679904222778" blue="0.31828768475483055" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="OA6-yh-8sF" firstAttribute="centerX" secondItem="am8-J9-Co8" secondAttribute="centerX" id="TxF-2T-kHg"/>
+                        <constraint firstItem="OA6-yh-8sF" firstAttribute="centerY" secondItem="am8-J9-Co8" secondAttribute="centerY" id="e14-nb-Z2V"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="5y3-sG-VOe" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Knu-rb-Rt0"/>
+                <constraint firstAttribute="bottom" secondItem="5y3-sG-VOe" secondAttribute="bottom" id="W0v-oc-1Lg"/>
+                <constraint firstItem="5y3-sG-VOe" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="ZRv-Pd-2zm"/>
+                <constraint firstItem="5y3-sG-VOe" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="b0o-c8-cFk"/>
+                <constraint firstItem="5y3-sG-VOe" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="kHE-6v-Cag"/>
+            </constraints>
+            <variation key="default">
+                <mask key="subviews">
+                    <exclude reference="agf-96-IGT"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="137.68115942028987" y="124.55357142857142"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
